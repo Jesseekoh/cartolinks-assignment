@@ -5,12 +5,12 @@ import {
   CircleCheckIcon,
   CircleHelpIcon,
   CircleIcon,
-  Webhook,
-  Images,
   Bell,
   Headset,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 import {
   NavigationMenu,
@@ -25,6 +25,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Button } from './ui/button';
 import { ModeToggle } from './theme-toggle';
+import CookieIcon from '@mui/icons-material/Cookie';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -66,14 +67,16 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
   return (
-    <header className="p-4 sticky top-0 not-dark:bg-white ">
+    <header className="p-4 sticky top-0 not-dark:bg-white z-10 ">
       <div className="flex justify-between">
+        <Link href={'/'}>
+          <Button variant={'link'}>
+            <CookieIcon />
+          </Button>
+        </Link>
         {/* Nav Left */}
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Webhook />
-            </NavigationMenuItem>
             <NavigationMenuItem className="inline-flex gap-3 items-center ">
               <Avatar>
                 <AvatarImage
@@ -234,8 +237,8 @@ export default function Navbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <div className="gap-3 flex">
-                <Button className="bg-secondary not-dark:text-secondary-foreground">
-                  <Images strokeWidth={3} />
+                <Button className="text-secondary-foreground bg-accent">
+                  <PhotoSizeSelectActualIcon fontSize="small" />
                   Gallery
                 </Button>
                 <Button>
@@ -243,7 +246,7 @@ export default function Navbar() {
                   Support
                 </Button>
                 <Button size={'icon'}>
-                  <Bell strokeWidth={3} />
+                  <NotificationsIcon />
                 </Button>
                 <ModeToggle />
                 <Avatar>

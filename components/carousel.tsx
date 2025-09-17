@@ -64,7 +64,7 @@ export default function Carousel() {
     },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full mb-14">
       <Swiper
         modules={[Navigation, Pagination]}
         pagination={{
@@ -81,9 +81,8 @@ export default function Carousel() {
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 1.5 },
-          1268: { slidesPerView: 2 },
         }}
-        className="w-full"
+        className="w-full !px-4 lg:!px-10"
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
@@ -108,7 +107,7 @@ export default function Carousel() {
                     </h2>
                     <p className="mt-2 leading-3.5">{slide.desc}</p>
                   </div>
-                  <button className="mt-4 lg:self-center bg-white text-black px-4 py-2 rounded-4xl">
+                  <button className="mt-4 lg:self-center bg-white text-black px-4 py-2 rounded-4xl w-max">
                     {slide.button}
                   </button>
                 </div>
@@ -117,8 +116,8 @@ export default function Carousel() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex ">
-        <div className="custom-pagination mt-4 flex justify-center flex-1"></div>
+      <div className="flex relative items-center px-10">
+        <div className="custom-pagination !w-max mx-auto items-center mt-4 flex gap-2"></div>
         <div className="custom-navigation lg:flex gap-2 mt-2 hidden">
           <Button
             className="custom-prev bg-gray-200 text-black rounded-full"

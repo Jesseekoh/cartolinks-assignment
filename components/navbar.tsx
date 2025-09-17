@@ -15,7 +15,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import CookieIcon from '@mui/icons-material/Cookie';
 import FolderIcon from '@mui/icons-material/Folder';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Sheet,
   SheetTrigger,
@@ -99,7 +99,10 @@ export default function Navbar() {
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <p className="text-sm">johndoe@email.com</p>
+                <Button variant={'ghost'}>
+                  <p className="text-sm">johndoe@email.com</p>
+                  <ExpandMoreIcon />
+                </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
